@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- =========================================
+         META DATA / SEO / PAGE SETUP
+         ========================================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thandi Mokoena | Digital Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website for Thandi Mokoena, a junior UX designer and digital product specialist focused on research-backed, elegant user experiences."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, junior ux designer, student portfolio, digital portfolio, UI UX, junior professional"
+    />
+    <meta name="author" content="Thandi Mokoena" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================================
+         GLOBAL BACKGROUND EFFECTS
+         ========================================= -->
+    <div class="site-bg"></div>
+    <div class="cursor-glow"></div>
+
+    <!-- =========================================
+         HEADER / NAVIGATION
+         ========================================= -->
+    <header class="header" id="top">
+      <div class="container nav-wrap">
+        <!-- Brand / Logo -->
+        <a href="#hero" class="brand">
+          <span class="brand-mark">TM</span>
+          <span class="brand-copy">
+            <strong>Thandi Mokoena</strong>
+            <small>Junior UX Designer</small>
+          </span>
+        </a>
+
+        <!-- Main Navigation Links -->
+        <nav class="nav" id="navMenu">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#journey">Journey</a>
+          <a href="#testimonials">Results</a>
+          <a href="#contact" class="nav-cta">Let's Talk</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- =========================================
+           HERO SECTION
+           ========================================= -->
+      <section class="hero section" id="hero">
+        <div class="container hero-grid">
+          <!-- Hero Text Content -->
+          <div class="hero-copy reveal reveal-left">
+            <h1>
+              I design digital experiences that feel
+              <br><span class="gradient-text" id="typedWord">Clear</span>
+            </h1>
+            <p class="hero-lead">
+              I'm Thandi Mokoena, a Pretoria-based final-year digital design student focused on UX,
+              interface clarity, and brand-led portfolio experiences that help people trust what they see fast.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Selected Work</a>
+              <a href="#contact" class="btn btn-secondary">Book a Discovery Call</a>
+            </div>
+
+            <!-- Hero Proof / Stats -->
+            <div class="hero-proof">
+              <article>
+                <strong>9+</strong>
+                <span>Client and campus projects completed</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span>Academic merit recognitions in UI and branding</span>
+              </article>
+              <article>
+                <strong>100%</strong>
+                <span>Portfolio fully built in vanilla HTML, CSS and JS</span>
+              </article>
+            </div>
+          </div>
+
+          <!-- Hero Visual Cards -->
+          <div class="hero-visual reveal reveal-right">
+            <!-- Main Profile Card -->
+            <div class="hero-card profile-card floating-card">
+              <div class="profile-top">
+                <img src="assets/thandi-profile.svg" alt="Portrait illustration of Thandi Mokoena" />
+                <div>
+                  <p class="muted-label">Primary Focus</p>
+                  <h3>UX, UI & Portfolio Strategy</h3>
+                  <p>Pretoria, South Africa</p>
+                </div>
+              </div>
+              <div class="mini-metrics">
+                <div>
+                  <span>Research</span>
+                  <strong>92%</strong>
+                </div>
+                <div>
+                  <span>UI Polish</span>
+                  <strong>95%</strong>
+                </div>
+                <div>
+                  <span>Delivery</span>
+                  <strong>100%</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Client Note Card -->
+            <div class="hero-card note-card reveal reveal-stagger">
+              <span class="card-badge">Client note</span>
+              <p>
+                “I need a portfolio that does not look like a student template. It must feel premium,
+                intentional, and professional enough to send to recruiters and real paying clients.”
+              </p>
+            </div>
+
+            <!-- Goal / Progress Card -->
+            <div class="hero-card stat-card reveal reveal-stagger">
+              <span class="muted-label">Current goal</span>
+              <h3>Convert profile views into interviews</h3>
+              <div class="progress-shell">
+                <div class="progress-fill"></div>
+              </div>
+              <small>Personal branding + stronger project storytelling + recruiter-friendly structure</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+          <span></span>
+        </a>
+      </section>
+
+      <!-- =========================================
+           ABOUT SECTION
+           ========================================= -->
+      <section class="section" id="about">
+        <div class="container split-grid">
+          <!-- About Text -->
+          <div class="section-copy reveal reveal-left">
+            <span class="section-tag">About me</span>
+            <h2>Thoughtful design, grounded in clarity and first impressions.</h2>
+            <p>
+              I am a fictional but realistic junior professional created for this demo: a B.I.S. Multimedia
+              final-year student with a strong interest in product thinking, visual hierarchy, and turning messy ideas
+              into interfaces that feel credible and easy to use.
+            </p>
+            <p>
+              My best work sits between strategy and design. I enjoy understanding what users need, what recruiters scan
+              for, and what makes a portfolio feel polished instead of generic.
+            </p>
+
+            <!-- About Highlights -->
+            <div class="about-points">
+              <article>
+                <h3>What I bring</h3>
+                <p>Wireframes, case study thinking, responsive UI design, content structuring, and visual consistency.</p>
+              </article>
+              <article>
+                <h3>What I want</h3>
+                <p>A junior UX, UI, or product design role where I can keep learning while contributing from day one.</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Personal Info Panel -->
+          <div class="glass-panel reveal reveal-right">
+            <div class="panel-row">
+              <span>Name</span>
+              <strong>Thandi Mokoena</strong>
+            </div>
+            <div class="panel-row">
+              <span>Age</span>
+              <strong>22</strong>
+            </div>
+            <div class="panel-row">
+              <span>Email</span>
+              <strong>thandi.mokoena.design@gmail.com</strong>
+            </div>
+            <div class="panel-row">
+              <span>Phone</span>
+              <strong>+27 72 418 9630</strong>
+            </div>
+            <div class="panel-row">
+              <span>LinkedIn</span>
+              <strong>linkedin.com/in/thandimokoena</strong>
+            </div>
+            <div class="panel-row">
+              <span>GitHub</span>
+              <strong>github.com/thandimokoena</strong>
+            </div>
+            <div class="panel-row">
+              <span>Portfolio angle</span>
+              <strong>Design-led, recruiter-friendly, conversion focused</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           SKILLS SECTION
+           ========================================= -->
+      <section class="section section-alt" id="skills">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-heading reveal reveal-left">
+            <span class="section-tag">Core strengths</span>
+            <h2>Balanced between visual polish and practical thinking.</h2>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="skills-grid">
+            <article class="skill-card reveal reveal-stagger">
+              <h3>UX Research Basics</h3>
+              <p>User flows, competitor reviews, pain point discovery, and clear information architecture.</p>
+            </article>
+            <article class="skill-card reveal reveal-stagger">
+              <h3>UI Design</h3>
+              <p>Clean layouts, spacing systems, typography hierarchy, button states, and polished sections.</p>
+            </article>
+            <article class="skill-card reveal reveal-stagger">
+              <h3>Responsive Front-End</h3>
+              <p>HTML, CSS, JavaScript, accessibility awareness, and section-based landing page builds.</p>
+            </article>
+            <article class="skill-card reveal reveal-stagger">
+              <h3>Brand Storytelling</h3>
+              <p>Turning projects into believable case studies with outcomes, reasoning, and stronger messaging.</p>
+            </article>
+          </div>
+
+          <!-- Tools / Software Band -->
+          <div class="tools-band reveal reveal-right">
+            <span>Figma</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Adobe Illustrator</span>
+            <span>Notion</span>
+            <span>Miro</span>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           PROJECTS SECTION
+           ========================================= -->
+      <section class="section" id="projects">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-heading reveal reveal-left">
+            <span class="section-tag">Selected work</span>
+            <h2>Projects designed to show range, thinking, and credibility.</h2>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid">
+            <article class="project-card reveal reveal-stagger">
+              <img src="assets/project-campus.svg" alt="Campus career portal project preview" />
+              <div class="project-content">
+                <span class="project-type">UX Case Study</span>
+                <h3>Campus Career Hub Redesign</h3>
+                <p>
+                  Reframed a cluttered student opportunity portal into a simpler, guided experience with stronger filtering,
+                  clearer CTAs, and mobile-first card layouts.
+                </p>
+                <ul>
+                  <li>Improved navigation clarity</li>
+                  <li>Focused on first-time users</li>
+                  <li>Created a cleaner dashboard concept</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card reveal reveal-stagger">
+              <img src="assets/project-fashion.svg" alt="Fashion portfolio website project preview" />
+              <div class="project-content">
+                <span class="project-type">Portfolio Website</span>
+                <h3>Freelance Stylist Personal Brand Site</h3>
+                <p>
+                  Designed a premium one-page portfolio concept for a fashion stylist who needed a more upscale digital
+                  presence to attract collaborations and bookings.
+                </p>
+                <ul>
+                  <li>High-end visual direction</li>
+                  <li>Service-led conversion sections</li>
+                  <li>WhatsApp-first enquiry flow</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card reveal reveal-stagger">
+              <img src="assets/project-finance.svg" alt="Finance dashboard concept preview" />
+              <div class="project-content">
+                <span class="project-type">UI Concept</span>
+                <h3>Student Budget Dashboard</h3>
+                <p>
+                  A simple finance dashboard concept aimed at helping students understand spending categories,
+                  recurring costs, and monthly financial habits at a glance.
+                </p>
+                <ul>
+                  <li>Chart-led storytelling</li>
+                  <li>Card-based responsive layout</li>
+                  <li>Clear visual hierarchy</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           JOURNEY / EDUCATION / EXPERIENCE SECTION
+           ========================================= -->
+      <section class="section section-alt" id="journey">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-heading reveal reveal-left">
+            <span class="section-tag">Education & experience</span>
+            <h2>A believable junior profile with a strong upward trajectory.</h2>
+          </div>
+
+          <!-- Timeline -->
+          <div class="timeline">
+            <article class="timeline-item reveal reveal-right">
+              <span class="timeline-year">2023 - Present</span>
+              <div>
+                <h3>B.I.S. Multimedia - University of Pretoria</h3>
+                <p>
+                  Built a foundation in interaction design, digital communication, content structure, and visual systems.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item reveal reveal-right">
+              <span class="timeline-year">2024</span>
+              <div>
+                <h3>Freelance Design Projects</h3>
+                <p>
+                  Completed small branding, landing page, and presentation design projects for student leaders and local entrepreneurs.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item reveal reveal-right">
+              <span class="timeline-year">2025</span>
+              <div>
+                <h3>UX Portfolio Development Sprint</h3>
+                <p>
+                  Focused on turning raw student work into recruiter-ready case studies with stronger messaging and more professional visuals.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- CV Panel -->
+          <div class="cv-panel reveal reveal-left">
+            <div>
+              <span class="section-tag">Curriculum Vitae</span>
+              <h3>Need the formal version?</h3>
+              <p>Open the example PDF in a new tab or download it directly to replace later with the real client CV.</p>
+            </div>
+            <div class="cv-actions">
+              <a class="btn btn-primary" href="assets/example-cv.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+              <a class="btn btn-secondary" href="assets/example-cv.pdf" download>Download CV</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           TESTIMONIALS / CREDIBILITY SECTION
+           ========================================= -->
+      <section class="section" id="testimonials">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-heading reveal reveal-left">
+            <span class="section-tag">Proof & credibility</span>
+            <h2>Testimonials and achievements that make the profile feel real.</h2>
+          </div>
+
+          <!-- Testimonials Grid -->
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal reveal-stagger">
+              <p>
+                “Thandi has a rare ability to make a design feel calm and premium without overdoing it. Her layouts are structured, modern, and easy to trust.”
+              </p>
+              <div>
+                <strong>Lerato M.</strong>
+                <span>Student Brand Manager</span>
+              </div>
+            </article>
+            <article class="testimonial-card reveal reveal-stagger">
+              <p>
+                “She doesn't just make things look better. She asks the right questions first, which made the final concept stronger and more useful.”
+              </p>
+              <div>
+                <strong>Michael R.</strong>
+                <span>Freelance Photographer</span>
+              </div>
+            </article>
+            <article class="testimonial-card achievement-card reveal reveal-stagger">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Top 10 class recognition in digital visual communication</li>
+                <li>Presented 3 portfolio concepts in peer critique sessions</li>
+                <li>Built a personal portfolio system focused on recruiter conversion</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           CONTACT SECTION
+           ========================================= -->
+      <section class="section section-alt" id="contact">
+        <div class="container contact-grid">
+          <!-- Contact Details -->
+          <div class="section-copy reveal reveal-left">
+            <span class="section-tag">Let's connect</span>
+            <h2>Looking for a junior designer who already understands presentation and polish?</h2>
+            <p>
+              I'm open to internships, graduate opportunities, junior UI/UX roles, and selected freelance collaborations.
+            </p>
+            <div class="contact-list">
+              <a href="mailto:thandi.mokoena.design@gmail.com">thandi.mokoena.design@gmail.com</a>
+              <a href="tel:+27724189630">+27 72 418 9630</a>
+              <a href="https://www.linkedin.com/in/thandimokoena" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+              <a href="https://github.com/thandimokoena" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-card reveal reveal-right">
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" />
+            </div>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="input-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell me about the role or project."></textarea>
+            </div>
+            <button type="button" class="btn btn-primary form-btn">Send Enquiry</button>
+            <small>This demo form is front-end only. Connect Formspree or your own backend later.</small>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="footer">
+      <div class="container footer-wrap">
+        <p>© 2026 Thandi Mokoena. Portfolio demo built for a realistic client showcase.</p>
+      </div>
+    </footer>
+
+      <!-- =========================================
+          BACK TO TOP BUTTON
+          ========================================= -->
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span class="back-to-top__inner" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 19V5M12 5L6.75 10.25M12 5l5.25 5.25"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+
+      <!-- =========================================
+          WHATSAPP PREVIEW + FLOATING BUTTON
+          ========================================= -->
+      <div class="whatsapp-stack">
+        <!-- WhatsApp Preview Popup -->
+        <div class="whatsapp-preview" id="whatsappPreview" aria-hidden="true">
+          <div class="whatsapp-preview__glow"></div>
+
+          <div class="whatsapp-preview__head">
+            <div class="whatsapp-profile">
+              <div class="whatsapp-avatar">
+                <img src="assets/thandi-profile.svg" alt="Thandi Mokoena profile illustration" />
+                <span class="whatsapp-status-dot"></span>
+              </div>
+
+              <div class="whatsapp-profile-copy">
+                <strong>Thandi Mokoena</strong>
+                <span>Usually replies within a few hours</span>
+              </div>
+            </div>
+
+            <button id="closeWhatsappPreview" aria-label="Close WhatsApp preview">×</button>
+          </div>
+
+          <div class="whatsapp-preview__body">
+            <span class="whatsapp-label">Start a conversation</span>
+
+            <div class="whatsapp-message-bubble">
+              <p>
+                Hi Thandi, I viewed your portfolio and would like to chat about a junior opportunity / project.
+              </p>
+              <small>Tap below to continue in WhatsApp</small>
+            </div>
+
+            <a
+              id="openWhatsappLink"
+              href="https://wa.me/27724189630?text=Hi%20Thandi%2C%20I%20viewed%20your%20portfolio%20and%20would%20like%20to%20chat%20about%20a%20junior%20opportunity%20or%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary whatsapp-action"
+            >
+              Continue to WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating WhatsApp Button -->
+        <button class="whatsapp-button" id="whatsappButton" aria-label="Open WhatsApp chat preview">
+          <img src="assets/whatsapp-icon.svg" alt="WhatsApp icon" />
+        </button>
+      </div>
+
+    <!-- =========================================
+         MAIN JAVASCRIPT FILE
+         ========================================= -->
+    <script src="script.js"></script>
+  </body>
+</html>

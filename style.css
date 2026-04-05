@@ -1,0 +1,1242 @@
+/* =========================================
+   ROOT VARIABLES / THEME TOKENS
+   ========================================= */
+:root {
+  --bg: #07111f;
+  --bg-soft: rgba(255, 255, 255, 0.04);
+  --panel: rgba(10, 19, 35, 0.72);
+  --panel-strong: rgba(12, 22, 40, 0.92);
+  --text: #edf4ff;
+  --muted: #9eb1c8;
+  --line: rgba(255, 255, 255, 0.08);
+  --primary: #77e2ff;
+  --primary-strong: #45c2ff;
+  --accent: #d9a7ff;
+  --success: #8cffc7;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --container: min(1180px, calc(100% - 2rem));
+  --transition: 260ms ease;
+}
+
+/* =========================================
+   GLOBAL RESET / BASE ELEMENTS
+   ========================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* =========================================
+   GLOBAL BACKGROUND EFFECTS
+   ========================================= */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(119, 226, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(217, 167, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 70% 80%, rgba(140, 255, 199, 0.08), transparent 28%),
+    linear-gradient(180deg, #07111f 0%, #091423 45%, #050b14 100%);
+  z-index: -2;
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(119, 226, 255, 0.11), transparent 62%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(18px);
+}
+
+/* =========================================
+   LAYOUT HELPERS
+   ========================================= */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding: 6rem 0;
+}
+
+.section-alt {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+}
+
+/* =========================================
+   SMALL LABELS / TAGS / BADGES
+   ========================================= */
+.section-tag,
+.eyebrow,
+.card-badge,
+.muted-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--primary);
+  font-size: 1.30rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.section-tag {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(119, 226, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(119, 226, 255, 0.08);
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.7rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin: 1rem 0 1.35rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+  margin: 1rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.18rem;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, #ffffff 40%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================================
+   HEADER / NAVIGATION
+   ========================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(20px);
+  background: rgba(5, 11, 20, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 82px;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(119, 226, 255, 0.18), rgba(217, 167, 255, 0.16));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-weight: 800;
+}
+
+.brand-copy {
+  display: grid;
+}
+
+.brand-copy small {
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav a {
+  color: var(--muted);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.nav-cta {
+  padding: 0.82rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.menu-toggle {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: white;
+  margin: 5px auto;
+}
+
+/* =========================================
+   HERO / MAIN GRID LAYOUTS
+   ========================================= */
+.hero {
+  min-height: calc(100vh - 82px);
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+.hero-grid,
+.split-grid,
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+
+.hero-lead {
+  max-width: 62ch;
+  font-size: 1.07rem;
+}
+
+.hero-actions,
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 1.25rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: #07111f;
+  background: linear-gradient(135deg, var(--primary), #d6f6ff);
+  box-shadow: 0 16px 40px rgba(119, 226, 255, 0.22);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+/* =========================================
+   HERO PROOF / CARDS / PANELS
+   ========================================= */
+.hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.hero-proof article,
+.hero-card,
+.skill-card,
+.project-card,
+.testimonial-card,
+.contact-card,
+.glass-panel,
+.cv-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+}
+
+.hero-proof article {
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+}
+
+.hero-proof strong {
+  display: block;
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero-visual {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-card {
+  padding: 1.3rem;
+  border-radius: var(--radius-lg);
+}
+
+.profile-top {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profile-top img {
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mini-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.mini-metrics div {
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+}
+
+.mini-metrics span,
+.footer p,
+.whatsapp-preview span,
+.contact-card small {
+  color: var(--muted);
+}
+
+.mini-metrics strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.progress-shell {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 1rem 0 0.6rem;
+}
+
+.progress-fill {
+  width: 78%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+/* =========================================
+   DECORATIVE ANIMATIONS
+   ========================================= */
+.floating-card {
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* =========================================
+   SCROLL INDICATOR
+   ========================================= */
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  display: grid;
+  place-items: start center;
+  padding-top: 0.5rem;
+}
+
+.scroll-indicator span {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: scrollDot 1.8s infinite;
+}
+
+@keyframes scrollDot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(22px);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   CONTENT GRIDS
+   ========================================= */
+.about-points,
+.testimonial-grid,
+.skills-grid,
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-points {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+}
+
+.about-points article,
+.panel-row,
+.timeline-item {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.about-points article {
+  padding: 1.2rem;
+}
+
+.glass-panel {
+  padding: 1.2rem;
+  border-radius: var(--radius-lg);
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.panel-row span {
+  color: var(--muted);
+}
+
+.skills-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 1.4rem;
+}
+
+.skill-card,
+.testimonial-card,
+.contact-card {
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+}
+
+.tools-band {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tools-band span {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+
+.projects-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-card {
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.3rem;
+}
+
+.project-type {
+  color: var(--success);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+.project-card ul,
+.achievement-card ul {
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+/* =========================================
+   TIMELINE / CV SECTION
+   ========================================= */
+.timeline {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.timeline-year {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.cv-panel {
+  padding: 1.5rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* =========================================
+   TESTIMONIALS / CONTACT
+   ========================================= */
+.testimonial-grid {
+  grid-template-columns: 1fr 1fr 0.9fr;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.contact-list a {
+  color: var(--text);
+}
+
+.contact-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.input-group {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.input-group label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  padding: 1rem 1rem;
+  outline: none;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: rgba(119, 226, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.2rem 0 4.5rem;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* =========================================
+   FLOATING ACTION BUTTONS
+   ========================================= */
+.back-to-top,
+.whatsapp-button,
+.whatsapp-preview__head button {
+  border: 0;
+  cursor: pointer;
+}
+
+/* =========================================
+   BACK TO TOP BUTTON
+   ========================================= */
+.back-to-top {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)),
+    linear-gradient(135deg, rgba(119, 226, 255, 0.96), rgba(217, 167, 255, 0.92));
+  color: #07111f;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 8px 20px rgba(119, 226, 255, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.94);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  z-index: 35;
+}
+
+/* soft outer glow */
+.back-to-top::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 22px;
+  background: radial-gradient(circle, rgba(119, 226, 255, 0.18), transparent 68%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: -1;
+}
+
+/* subtle inner panel */
+.back-to-top__inner {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top__inner svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* visible state */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* hover */
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.38),
+    0 10px 24px rgba(119, 226, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+.back-to-top:hover::before {
+  opacity: 1;
+}
+
+/* active press */
+.back-to-top:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* focus state */
+.back-to-top:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 4px;
+}
+
+/* mobile sizing */
+@media (max-width: 560px) {
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 52px;
+    height: 52px;
+  }
+
+  .back-to-top__inner {
+    width: 38px;
+    height: 38px;
+  }
+
+  .back-to-top__inner svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.whatsapp-stack {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 5rem;
+  z-index: 36;
+}
+
+/* =========================================
+   FLOATING WHATSAPP BUTTON
+   ========================================= */
+.whatsapp-button {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, #25d366, #0ea652);
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 22px 45px rgba(7, 86, 36, 0.38),
+    0 8px 22px rgba(0, 0, 0, 0.22);
+  animation: pulseWhatsapp 2.8s infinite;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.96);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.whatsapp-button.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 28px 55px rgba(7, 86, 36, 0.44),
+    0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.whatsapp-button img {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes pulseWhatsapp {
+  0% {
+    box-shadow:
+      0 22px 45px rgba(7, 86, 36, 0.38),
+      0 0 0 0 rgba(37, 211, 102, 0.34);
+  }
+  70% {
+    box-shadow:
+      0 22px 45px rgba(7, 86, 36, 0.38),
+      0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow:
+      0 22px 45px rgba(7, 86, 36, 0.38),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* =========================================
+   WHATSAPP PREVIEW POPUP
+   ========================================= */
+.whatsapp-preview {
+  position: absolute;
+  right: 0;
+  bottom: 78px;
+  width: min(365px, calc(100vw - 2rem));
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(14, 26, 44, 0.96), rgba(8, 18, 31, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.96);
+  transform-origin: bottom right;
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
+  backdrop-filter: blur(18px);
+}
+
+.whatsapp-preview.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* little pointer toward button */
+.whatsapp-preview::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: -8px;
+  width: 18px;
+  height: 18px;
+  background: rgba(8, 18, 31, 0.96);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transform: rotate(45deg);
+}
+
+/* soft top glow */
+.whatsapp-preview__glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(119, 226, 255, 0.14), transparent 36%),
+    radial-gradient(circle at top right, rgba(37, 211, 102, 0.14), transparent 30%);
+  pointer-events: none;
+}
+
+/* =========================================
+   PREVIEW HEADER
+   ========================================= */
+.whatsapp-preview__head {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.whatsapp-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.whatsapp-avatar {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(119, 226, 255, 0.1), rgba(217, 167, 255, 0.08));
+}
+
+.whatsapp-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.whatsapp-status-dot {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #25d366;
+  border: 2px solid rgba(8, 18, 31, 0.96);
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.14);
+}
+
+.whatsapp-profile-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.whatsapp-profile-copy strong {
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.whatsapp-profile-copy span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.whatsapp-preview__head button {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1.15rem;
+  display: grid;
+  place-items: center;
+  transition: background var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.whatsapp-preview__head button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================
+   PREVIEW BODY
+   ========================================= */
+.whatsapp-preview__body {
+  position: relative;
+  padding: 1rem;
+}
+
+.whatsapp-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+  color: var(--primary);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.whatsapp-message-bubble {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0.9rem;
+  border-radius: 20px 20px 20px 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.whatsapp-message-bubble::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transform: rotate(45deg);
+}
+
+.whatsapp-message-bubble p {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.whatsapp-message-bubble small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   WHATSAPP CTA BUTTON
+   ========================================= */
+.whatsapp-action {
+  width: 100%;
+  margin-top: 0.2rem;
+  min-height: 56px;
+  border-radius: 16px;
+  font-weight: 800;
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.14);
+}
+
+/* =========================================
+   SMALL SCREEN TWEAKS
+   ========================================= */
+@media (max-width: 560px) {
+  .whatsapp-stack {
+    right: 1rem;
+    bottom: 4.7rem;
+  }
+
+  .whatsapp-preview {
+    width: min(340px, calc(100vw - 1.2rem));
+  }
+
+  .whatsapp-profile-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .whatsapp-profile-copy span {
+    font-size: 0.77rem;
+  }
+}
+
+/* =========================================
+   REVEAL ANIMATIONS
+   ========================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal-left {
+  transform: translateX(-30px);
+}
+
+.reveal-right {
+  transform: translateX(30px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================================
+   RESPONSIVE: TABLET / SMALL DESKTOP
+   ========================================= */
+@media (max-width: 1100px) {
+  .skills-grid,
+  .projects-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-proof {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   RESPONSIVE: TABLET / MOBILE NAV
+   ========================================= */
+@media (max-width: 860px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 1rem;
+    width: min(320px, calc(100vw - 2rem));
+    padding: 1rem;
+    border-radius: 22px;
+    background: rgba(7, 15, 28, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
+  }
+
+  .nav.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav a {
+    padding: 0.85rem 0.95rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .hero-grid,
+  .split-grid,
+  .contact-grid,
+  .timeline-item,
+  .cv-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .testimonial-grid,
+  .about-points {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-top {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-metrics {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  h2 {
+    max-width: unset;
+  }
+}
+
+/* =========================================
+   RESPONSIVE: SMALL MOBILE
+   ========================================= */
+@media (max-width: 560px) {
+  .section {
+    padding: 4.6rem 0;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .mini-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-row {
+    flex-direction: column;
+  }
+
+  .hero-actions,
+  .cv-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   TYPED / FADE WORD EFFECT
+   ========================================= */
+.fade-word {
+  opacity: 0.25;
+  transition: opacity 180ms ease;
+}
+#typedWord {
+  display: inline-block;
+  min-width: 12ch;
+}
