@@ -524,19 +524,129 @@ p {
   border-radius: var(--radius-lg);
 }
 
-.tools-band {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
+    /* =========================================
+      TOOLS / SOFTWARE BAND UPGRADE
+      ========================================= */
+    .tools-wrap {
+      margin-top: 2.4rem;
+    }
 
-.tools-band span {
-  padding: 0.75rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--muted);
-}
+    .tools-head {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .tools-head p {
+      max-width: 720px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .tools-band {
+      position: relative;
+      overflow: hidden;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .tools-track {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: max-content;
+      animation: toolsScroll 24s linear infinite;
+    }
+
+        .tool-pill {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.55rem; /* space between icon + text */
+
+          min-height: 52px;
+          padding: 0.9rem 1.25rem;
+          border-radius: 999px;
+
+          border: 1px solid rgba(255, 255, 255, 0.09);
+
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
+
+          backdrop-filter: blur(10px);
+
+          color: #ffffff;
+          font-size: 0.95rem;
+          font-weight: 600;
+
+          box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+          transition: all 0.3s ease;
+        }
+
+        .tool-pill:hover {
+          transform: translateY(-4px);
+          border-color: rgba(119, 226, 255, 0.35);
+          background:
+            linear-gradient(180deg, rgba(119, 226, 255, 0.18), rgba(217, 167, 255, 0.08));
+        }
+
+    .tool-pill svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      opacity: 0.85;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .tool-pill:hover svg {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    .tools-band:hover .tools-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes toolsScroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .tools-head p {
+        font-size: 0.92rem;
+      }
+
+      .tool-pill {
+        min-height: 46px;
+        padding: 0.78rem 1rem;
+        font-size: 0.88rem;
+      }
+
+      .tools-track {
+        gap: 0.8rem;
+        animation-duration: 18s;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tools-track {
+        animation: none;
+      }
+    }
 
 .projects-grid {
   grid-template-columns: repeat(3, 1fr);
